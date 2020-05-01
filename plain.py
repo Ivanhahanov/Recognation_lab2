@@ -131,4 +131,8 @@ trained_parameters = model(input, output, number_input_neurons, number_hidden_ne
 for i in range(1,5):
     X_test = np.array([[input[0][i]], [input[1][i]]])
     y_predict = predict(X_test, trained_parameters)
-    print('NN output {:d} for input ({:f}, {:f})'.format(y_predict, X_test[0][0], X_test[1][0]))
+    if y_predict == 0:
+        y_predict = 'Миг'
+    else:
+        y_predict = 'Су'
+    print('NN output {:s} for input ({:f}, {:f})'.format(y_predict, X_test[0][0], X_test[1][0]))

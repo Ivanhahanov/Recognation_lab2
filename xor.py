@@ -106,10 +106,6 @@ def model(X, Y, n_x, n_h, n_y, num_of_iters, learning_rate):
         grads = backward_prop(X, Y, cache, parameters)
 
         parameters = update_parameters(parameters, grads, learning_rate)
-
-        if(i % 50 == 0):
-            print('Cost in iteration {:d} = {:f}'.format(i, cost))
-
     return parameters
 
 
